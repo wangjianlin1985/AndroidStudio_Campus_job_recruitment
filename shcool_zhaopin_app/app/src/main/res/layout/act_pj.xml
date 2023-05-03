@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/head_layout"/>
+    <RatingBar
+        android:id="@+id/rb"
+        android:layout_marginTop="@dimen/phoenix_dimen_20"
+        android:numStars="5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et"
+        android:padding="@dimen/dp_10"
+        android:layout_margin="@dimen/phoenix_dimen_20"
+        android:gravity="start"
+        android:textSize="@dimen/sp_14"
+        android:hint="请输入您的评价"
+        android:background="@drawable/shap_4"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+</LinearLayout>

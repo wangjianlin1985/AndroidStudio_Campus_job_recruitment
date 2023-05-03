@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="7dp"
+    android:background="@drawable/shap_4"
+    android:layout_margin="7dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:text="2019年"
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:text="综合评分：90"
+            android:id="@+id/tv_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14sp"
+                android:text="身高体重BMI测试"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RatingBar
+                android:layout_marginLeft="@dimen/phoenix_dimen_20"
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/rb1"
+                android:numStars="5"
+                android:rating="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="@dimen/phoenix_dimen_20"
+            android:text="ss"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tv_sg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14sp"
+                android:text="肺活量测试"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RatingBar
+                android:layout_marginLeft="@dimen/phoenix_dimen_20"
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/rb2"
+                android:numStars="5"
+                android:rating="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="@dimen/phoenix_dimen_20"
+            android:text="ss"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tv_fei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14sp"
+                android:text="坐位体前屈测试"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RatingBar
+                android:layout_marginLeft="@dimen/phoenix_dimen_20"
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/rb3"
+                android:numStars="5"
+                android:rating="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="@dimen/phoenix_dimen_20"
+            android:text="ss"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tv_rou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14sp"
+                android:text="一分钟仰卧起坐、引体向上测试"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RatingBar
+                android:layout_marginLeft="@dimen/phoenix_dimen_20"
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/rb4"
+                android:numStars="5"
+                android:rating="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="@dimen/phoenix_dimen_20"
+            android:text="ss"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tv_liliang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14sp"
+                android:text="50米跑测试"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RatingBar
+                android:layout_marginLeft="@dimen/phoenix_dimen_20"
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/rb5"
+                android:numStars="5"
+                android:rating="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="@dimen/phoenix_dimen_20"
+            android:text="ss"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tv_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="14sp"
+                android:text="一分钟跳绳"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RatingBar
+                android:layout_marginLeft="@dimen/phoenix_dimen_20"
+                style="?android:attr/ratingBarStyleSmall"
+                android:id="@+id/rb6"
+                android:numStars="5"
+                android:rating="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="@dimen/phoenix_dimen_20"
+            android:text="ss"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tv_tiaosheng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

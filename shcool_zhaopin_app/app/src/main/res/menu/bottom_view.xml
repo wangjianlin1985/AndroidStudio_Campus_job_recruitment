@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@mipmap/xuanke"
+        android:title="职位" />
+ <!--<item-->
+        <!--android:id="@+id/shequ"-->
+        <!--android:icon="@mipmap/sport"-->
+        <!--android:title="论坛" />-->
+
+
+ <item
+        android:id="@+id/sj"
+        android:icon="@mipmap/mine"
+        android:title="我的" />
+</menu>
+

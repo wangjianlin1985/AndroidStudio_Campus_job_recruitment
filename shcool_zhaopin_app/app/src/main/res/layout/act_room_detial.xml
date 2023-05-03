@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/head_layout"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/dp_10"
+            android:text="name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/dp_10"
+            android:text="薪资："
+            android:textSize="14sp"
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_dec"
+
+        android:layout_margin="@dimen/dp_10"
+        android:text="职位描述："
+        android:textSize="14sp"
+
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+
+
+
+       android:layout_gravity="center_horizontal"
+        android:text="公司信息："
+        android:textSize="18sp"
+        android:textColor="@color/theme_color_red"
+
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_margin="@dimen/dp_10"
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" />
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="boss"
+        android:id="@+id/tv_boss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="name"
+        android:id="@+id/tv_c_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="address"
+        android:id="@+id/tv_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="phone"
+        android:id="@+id/tv_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="guimo"
+        android:id="@+id/tv_guimo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="neturl"
+        android:id="@+id/tv_neturl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="neturl"
+        android:id="@+id/tv_jianjie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_chat"
+        android:layout_marginTop="@dimen/phoenix_dimen_20"
+        android:gravity="center"
+        android:text="立即咨询"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:layout_width="200dp"
+        android:layout_height="30dp" />
+</LinearLayout>

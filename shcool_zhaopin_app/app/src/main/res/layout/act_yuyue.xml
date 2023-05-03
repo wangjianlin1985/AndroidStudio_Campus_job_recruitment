@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <include layout="@layout/head_layout"/>
+    <TextView
+        android:layout_margin="@dimen/dp_10"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:text="选择开始时间"
+        android:id="@+id/tv_start"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+    <TextView
+        android:layout_margin="@dimen/dp_10"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:text="选择结束时间"
+        android:id="@+id/tv_end"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <EditText
+        android:paddingLeft="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_10"
+        android:id="@+id/et_phone"
+        android:hint="请输入联系方式"
+        android:textSize="14sp"
+        android:background="@drawable/shap_4"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+    <EditText
+        android:gravity="start"
+        android:padding="@dimen/dp_10"
+        android:layout_margin="@dimen/dp_10"
+        android:id="@+id/et_reason"
+        android:hint="请输入原因"
+        android:textSize="14sp"
+        android:background="@drawable/shap_4"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" />
+</LinearLayout>

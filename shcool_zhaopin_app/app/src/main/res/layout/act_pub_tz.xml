@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/head_layout"/>
+    <EditText
+        android:textSize="@dimen/sp_14"
+        android:id="@+id/et_title"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:background="@drawable/shap_4"
+        android:layout_margin="@dimen/dp_10"
+        android:hint="请输入标题"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <EditText
+        android:textSize="@dimen/sp_14"
+        android:id="@+id/et_content"
+        android:gravity="start"
+        android:padding="5dp"
+        android:background="@drawable/shap_4"
+        android:layout_margin="@dimen/dp_10"
+        android:hint="说点什么吧..."
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+    <TextView
+        android:gravity="center"
+        android:layout_margin="70dp"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        android:id="@+id/tv_pub"
+        android:text="发布"
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+</LinearLayout>

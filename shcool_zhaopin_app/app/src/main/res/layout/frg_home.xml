@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/head_layout"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:textStyle="bold"
+        android:text="一年级"
+        android:paddingLeft="@dimen/phoenix_dimen_20"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </TextView>
+    <View
+        android:background="@color/color_gray_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <TextView
+        android:id="@+id/tv2"
+        android:textStyle="bold"
+        android:text="二年级"
+        android:paddingLeft="@dimen/phoenix_dimen_20"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </TextView>
+    <View
+        android:background="@color/color_gray_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <TextView
+        android:id="@+id/tv3"
+        android:textStyle="bold"
+        android:text="三年级"
+        android:paddingLeft="@dimen/phoenix_dimen_20"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </TextView>
+    <View
+        android:background="@color/color_gray_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <TextView
+        android:id="@+id/tv4"
+        android:textStyle="bold"
+        android:text="四年级"
+        android:paddingLeft="@dimen/phoenix_dimen_20"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </TextView>
+    <View
+        android:background="@color/color_gray_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <TextView
+        android:id="@+id/tv5"
+        android:textStyle="bold"
+        android:text="五年级"
+        android:paddingLeft="@dimen/phoenix_dimen_20"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </TextView>
+    <View
+        android:background="@color/color_gray_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/><TextView
+    android:id="@+id/tv6"
+        android:textStyle="bold"
+        android:text="六年级"
+        android:paddingLeft="@dimen/phoenix_dimen_20"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </TextView>
+    <View
+        android:background="@color/color_gray_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户简历</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div style="margin-top: 50px;>
+<!-- 示例-970 -->
+<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-6111334333458862" data-ad-slot="3820120620"></ins>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>简历信息</legend>
+</fieldset>
+
+<form class="layui-form" action="" lay-filter="example" >
+    <div class="layui-form-item" >
+        <label class="layui-form-label">用户头像</label>
+
+        <div class="layui-input-inline" style="height: 80px">
+            <div class="layui-upload-list">
+                <img class="layui-upload-img headImage" src="http://t.cn/RCzsdCq" style="height: 100px;width: 120px" id="demo1">
+                <p id="demoText"></p>
+            </div>
+        </div>
+    </div>
+
+     <div class="layui-form-item">
+        <label class="layui-form-label">名字<span id="id" style="visibility: hidden"></span></label>
+        <div class="layui-input-block">
+            <input type="text" id="name" name="name" lay-verify="name" autocomplete="off" placeholder="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-block">
+            <input type="text" id="sex" name="sex" lay-verify="sex" autocomplete="off" placeholder="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">年龄</label>
+        <div class="layui-input-block">
+            <input type="text" id="age" name="age" lay-verify="age" autocomplete="off" placeholder="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">居住地址</label>
+        <div class="layui-input-block">
+            <input type="text" id="address" name="address" lay-verify="address" autocomplete="off" placeholder="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系电话</label>
+        <div class="layui-input-block">
+            <input type="text" id="phone" name="phone" lay-verify="phone" autocomplete="off" placeholder="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">期望职位</label>
+        <div class="layui-input-block">
+            <input type="text" id="position" name="position" lay-verify="position" autocomplete="off" placeholder="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">学历</label>
+        <div class="layui-input-block">
+            <input type="text" id="xueli" name="xueli" lay-verify="xueli" autocomplete="off" placeholder="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">学校</label>
+        <div class="layui-input-block">
+            <input type="text" id="school" name="school" lay-verify="school" autocomplete="off" placeholder="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">期望薪资</label>
+        <div class="layui-input-block">
+            <input type="text" id="money" name="money" lay-verify="money" autocomplete="off" placeholder="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">经验</label>
+        <div class="layui-input-block">
+            <input type="text" id="jingyan" name="jingyan" lay-verify="jingyan" autocomplete="off" placeholder="" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">工作经历</label>
+        <div class="layui-input-block">
+            <input type="text" id="jingli" name="jingli" lay-verify="jingli" autocomplete="off" placeholder="" class="layui-input">
+
+        </div>
+    </div>
+
+  <div class="layui-form-item">
+        <label class="layui-form-label">自我评价</label>
+        <div class="layui-input-block">
+            <input type="text" id="pingjia" name="pingjia" lay-verify="pingjia" autocomplete="off" placeholder="" class="layui-input">
+
+        </div>
+    </div>
+
+
+
+
+
+</form>
+
+<script src="layui/layui.all.js"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    UrlParm = function() { // url参数
+        var data, index;
+        (function init() {
+            data = [];
+            index = {};
+            var u = window.location.search.substr(1);
+            if(u != '') {
+                var parms = decodeURIComponent(u).replace(/&amp;/g, "&").split('&');
+                for(var i = 0, len = parms.length; i < len; i++) {
+                    if(parms[i] != '') {
+                        var p = parms[i].split("=");
+                        if(p.length == 1 || (p.length == 2 && p[1] == '')) { // p | p=
+                            data.push(['']);
+                            index[p[0]] = data.length - 1;
+                        } else if(typeof(p[0]) == 'undefined' || p[0] == '') { // =c | =
+                            data[0] = [p[1]];
+                        } else if(typeof(index[p[0]]) == 'undefined') { // c=aaa
+                            data.push([p[1]]);
+                            index[p[0]] = data.length - 1;
+                        } else { // c=aaa
+                            data[index[p[0]]].push(p[1]);
+                        }
+                    }
+                }
+            }
+        })();
+        return {
+            // 获得参数,类似request.getParameter()
+            parm: function(o) { // o: 参数名或者参数次序
+                try {
+                    return(typeof(o) == 'number' ? data[o][0] : data[index[o]][0]);
+                } catch(e) {}
+            },
+            //获得参数组, 类似request.getParameterValues()
+            parmValues: function(o) { // o: 参数名或者参数次序
+                try {
+                    return(typeof(o) == 'number' ? data[o] : data[index[o]]);
+                } catch(e) {}
+            },
+            //是否含有parmName参数
+            hasParm: function(parmName) {
+                return typeof(parmName) == 'string' ? typeof(index[parmName]) != 'undefined' : false;
+            },
+            // 获得参数Map ,类似request.getParameterMap()
+            parmMap: function() {
+                var map = {};
+                try {
+                    for(var p in index) {
+                        map[p] = data[index[p]];
+                    }
+                } catch(e) {}
+                return map;
+            }
+        }
+    }();
+
+
+
+    var jid=UrlParm.parm("jid");
+    layui.use(['form', 'layedit', 'laydate',"upload",], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,upload = layui.upload
+            ,laydate = layui.laydate;
+
+
+
+
+
+        layui.jquery.ajax({
+            url:"http://localhost:8080/jianli/getJianLiInfo",
+            data:{"id":jid},
+            type:"Post",
+            success:function(result){
+                var data1 = result.data;
+                form.val('example',{
+                    'name':data1.name,"sex":data1.sex,
+                    "age":data1.age,"address":data1.address, "img":data1.img,"xueli":data1.xueli,
+                    "phone":data1.phone, "jingli":data1.jingli, "jingyan":data1.jingyan, "money":data1.meony,
+                    "school":data1.school, "position":data1.position,
+                })
+            },
+            error:function(result){
+                // $.messager.alert('错误',result.msg);
+            }
+        });
+
+
+
+
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加职位</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div style="margin-top: 50px;>
+<!-- 示例-970 -->
+<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-6111334333458862" data-ad-slot="3820120620"></ins>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>职位信息</legend>
+</fieldset>
+
+<form class="layui-form" action="" lay-filter="example" >
+
+
+     <div class="layui-form-item">
+        <label class="layui-form-label">职位名<span id="id" style="visibility: hidden"></span></label>
+        <div class="layui-input-block">
+            <input type="text" id="name" name="name" lay-verify="name" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">职位要求</label>
+        <div class="layui-input-block">
+            <input type="text" id="dec" name="dec" lay-verify="dec" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">薪资</label>
+        <div class="layui-input-block">
+            <input type="text" id="money" name="money" lay-verify="money" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">简介</label>
+        <div class="layui-input-block">
+            <input type="text" id="jianjie" name="jianjie" lay-verify="jianjie" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+
+
+
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+<!--            <button type="button" class="layui-btn layui-btn-normal" id="LAY-component-form-setval">赋值</button>-->
+            <button type="button" class="layui-btn layui-btn-normal" id="LAY-component-form-getval">提交</button>
+<!--            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>-->
+        </div>
+    </div>
+</form>
+
+<script src="layui/layui.all.js"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['form', 'layedit', 'laydate',"upload",], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,upload = layui.upload
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        var editIndex = layedit.build('LAY_demo_editor');
+
+        //自定义验证规则
+        form.verify({
+            account: function(value){
+                if(value.length < 5){
+                    return '账号至少得5个字符啊';
+                }
+            }
+            ,pass: [
+                /^[\S]{6,12}$/
+                ,'密码必须6到12位，且不能出现空格'
+            ]
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+
+        //监听指定开关
+        form.on('switch(switchTest)', function(data){
+            layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+                offset: '6px'
+            });
+            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+        });
+
+
+
+        //表单取值
+        layui.$('#LAY-component-form-getval').on('click', function(){
+            var data = form.val('example');
+            var localTest = layui.data('user');
+            console.log(localTest.id); //获得“ABC”
+            var text = layui.$("#id").text();
+            if (text!=0){
+
+                layui.jquery.ajax({
+                    url:"http://localhost:8080/position/upPosition",
+                    data:{'name':data.name,"dec":data.dec,"cid":localTest.id,"money":data.money,"jianjie":data.jianjie,"id":text},
+                    type:"Post",
+                    success:function(result){
+
+                        console.log(result);
+                        layer.msg(result.msg);
+                        // location.reload(); //删除成功后再刷新
+                    },
+                    error:function(result){
+                        // $.messager.alert('错误',result.msg);
+                    }
+                });
+            }else {
+
+                layui.jquery.ajax({
+                    url:"http://localhost:8080/position/addPosition",
+                    data:{'name':data.name,"dec":data.dec,"cid":localTest.id,"money":data.money,"jianjie":data.jianjie},
+                    type:"Post",
+                    success:function(result){
+
+                        console.log(result);
+                        layer.msg(result.msg);
+                        // location.reload(); //删除成功后再刷新
+                    },
+                    error:function(result){
+                        // $.messager.alert('错误',result.msg);
+                    }
+                });
+            }
+
+        });
+
+    });
+</script>
+
+</body>
+</html>

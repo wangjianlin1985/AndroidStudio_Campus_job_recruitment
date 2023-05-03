@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>企业信息</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div style="margin-top: 50px;>
+<!-- 示例-970 -->
+<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-6111334333458862" data-ad-slot="3820120620"></ins>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>企业信息</legend>
+</fieldset>
+
+<form class="layui-form" action="" lay-filter="example" >
+    <div class="layui-form-item" >
+        <label class="layui-form-label">营业执照</label>
+        <div class="layui-input-inline uploadHeadImage">
+            <div class="layui-upload-drag" id="headImg">
+                <i class="layui-icon"></i>
+                <p>点击上传图片</p>
+            </div>
+        </div>
+        <div class="layui-input-inline" style="height: 80px">
+            <div class="layui-upload-list">
+                <img class="layui-upload-img headImage" src="http://t.cn/RCzsdCq" style="height: 100px;width: 120px" id="demo1">
+                <p id="demoText"></p>
+            </div>
+        </div>
+    </div>
+
+     <div class="layui-form-item">
+        <label class="layui-form-label">企业名字<span id="id" style="visibility: hidden"></span></label>
+        <div class="layui-input-block">
+            <input type="text" id="name" name="name" lay-verify="name" autocomplete="off" placeholder="请输入名字" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">法人</label>
+        <div class="layui-input-block">
+            <input type="text" id="boss" name="boss" lay-verify="boss" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系电话</label>
+        <div class="layui-input-block">
+            <input type="text" id="phone" name="phone" lay-verify="phone" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+ <div class="layui-form-item">
+        <label class="layui-form-label">公司地址</label>
+        <div class="layui-input-block">
+            <input type="text" id="address" name="address" lay-verify="address" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">企业规模</label>
+        <div class="layui-input-block">
+            <input type="text" id="guimo" name="guimo" lay-verify="guimo" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">企业官网</label>
+        <div class="layui-input-block">
+            <input type="text" id="neturl" name="neturl" lay-verify="neturl" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">企业简介</label>
+        <div class="layui-input-block">
+            <input type="text" id="jianjie" name="jianjie" lay-verify="jianjie" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+<!--            <button type="button" class="layui-btn layui-btn-normal" id="LAY-component-form-setval">赋值</button>-->
+            <button type="button" class="layui-btn layui-btn-normal" id="LAY-component-form-getval">提交</button>
+<!--            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>-->
+        </div>
+    </div>
+</form>
+
+<script src="layui/layui.all.js"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['form', 'layedit', 'laydate',"upload",], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,upload = layui.upload
+            ,laydate = layui.laydate;
+
+
+
+
+        var head_pic="";
+        var uploadInst = upload.render({
+            elem: '#headImg'
+            , url: 'http://192.168.2.103:8080/upload'
+            , size: 500
+            , before: function (obj) {
+                //预读本地文件示例，不支持ie8
+                obj.preview(function (index, file, result) {
+                    layui.$('#demo1').attr('src', result); //图片链接（base64）
+                });
+
+            }
+            , done: function (res) {
+                //如果上传失败
+                if (res.code > 0) {
+                    return layer.msg('上传失败');
+                }
+                layer.msg('上传成功');
+                head_pic="http://192.168.2.103:8080/"+res.data;
+                //上传成功
+                //打印后台传回的地址: 把地址放入一个隐藏的input中, 和表单一起提交到后台, 此处略..
+                /*   console.log(res.data.src);*/
+                // window.parent.uploadHeadImage(res.data);
+                // var demoText = $('#demoText');
+                // demoText.html('<span style="color: #8f8f8f;">上传成功!!!</span>');
+            }
+            , error: function () {
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function () {
+                    uploadInst.upload();
+                });
+            }
+        });
+        var localTest = layui.data('user');
+        console.log(localTest.id); //获得“ABC”
+        layui.jquery.ajax({
+            url:"http://localhost:8080/company/getCompanyInfo",
+            data:{"id":localTest.id},
+            type:"Post",
+            success:function(result){
+                var data1 = result.data;
+                form.val('example',{
+                    'name':data1.name,"guimo":data1.guimo,
+                    "boss":data1.boss,"address":data1.address, "img":data1.img,"neturl":data1.neturl,
+                    "phone":data1.phone, "jianjie":data1.jianjie
+                })
+            },
+            error:function(result){
+                // $.messager.alert('错误',result.msg);
+            }
+        });
+
+        //表单取值
+        layui.$('#LAY-component-form-getval').on('click', function(){
+            var data = form.val('example');
+
+            var localTest = layui.data('user');
+            console.log(localTest.id); //获得“ABC”
+
+
+                layui.jquery.ajax({
+                    url:"http://localhost:8080/company/upCompany",
+                    data:{'name':data.name,"guimo":data.guimo,
+                        "boss":data.boss,"address":data.address, "img":head_pic,"neturl":data.neturl,
+                        "phone":data.phone,"id":localTest.id,"jianjie":data.jianjie},
+                    type:"Post",
+                    success:function(result){
+                        console.log(result);
+                        layer.msg(result.msg);
+                        location.href="companyindex.html";
+                    },
+                    error:function(result){
+                        // $.messager.alert('错误',result.msg);
+                    }
+                });
+
+
+        });
+
+
+    });
+</script>
+
+</body>
+</html>
